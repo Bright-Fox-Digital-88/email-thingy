@@ -26,8 +26,8 @@ app.post('/', async (req, res) => {
     await mg.messages.create(process.env.MAILGUN_DOMAIN, {
       from: `Website Contact Form <noreply@${process.env.MAILGUN_DOMAIN}>`,
       to: process.env.MAILGUN_TO_EMAIL,
-      subject: 'New Lead from Website',
-      text: `New lead from website contact form:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message || 'No message provided'}\n\nTime: ${new Date().toLocaleString()}`,
+      subject: 'New Lead from Nasvhille Ads Landing Page',
+      text: `New lead from Nasvhille Ads Landing Page contact form:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message || 'No message provided'}\n\nTime: ${new Date().toLocaleString()}`,
     });
     res.status(200).json({ success: true });
   } catch (error) {
