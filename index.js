@@ -1,8 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const Mailgun = require('mailgun.js');
 const formData = require('form-data');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 const mailgun = new Mailgun(formData);
