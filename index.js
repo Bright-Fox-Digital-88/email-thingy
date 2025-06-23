@@ -14,7 +14,7 @@ const app = express();
 
 // Configure CORS to only allow specific domains
 app.use(cors({
-  origin: Object.keys(sitesConfig).filter(key => key !== 'mailgunConfig'),
+  origin: Object.keys(sitesConfig),
   optionsSuccessStatus: 200
 }));
 
@@ -41,12 +41,12 @@ app.post('/', async (req, res) => {
 
   const mg = mailgun.client({
     username: 'api',
-    key: sitesConfig.mailgunConfig.apiKey,
+    key: process.env.MAILGUN_API_KEY,
   });
 
   try {
-    await mg.messages.create(sitesConfig.mailgunConfig.domain, {
-      from: `${siteConfig.fromName} <noreply@${sitesConfig.mailgunConfig.domain}>`,
+    await mg.messages.create(process.env.MAILGUN_DOMAIN, {
+      from: `${siteConfig.fromName} <noreply@${process.env.MAILGUN_DOMAIN}>`,
       to: siteConfig.toEmail,
       subject: siteConfig.subject,
       text: `New lead from ${siteConfig.siteName}:\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message || 'No message provided'}\n\nTime: ${new Date().toLocaleString()}`,
@@ -61,5 +61,5 @@ app.post('/', async (req, res) => {
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
-  console.log('Allowed origins:', Object.keys(sitesConfig).filter(key => key !== 'mailgunConfig'));
+  console.log('Allowed origins:', Object.keys(sitesConfig));
 }); 
