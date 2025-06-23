@@ -1,14 +1,14 @@
 {
   "https://nashvilletn.aaacwildliferemoval.com": {
-    "toEmail": "marketing@aaacwildliferemoval.com",
-    "fromName": "Nashville Wildlife Removal Contact Form",
-    "subject": "New Lead from Nashville Website",
-    "siteName": "Nashville AAAC Wildlife Removal"
+    "toEmail": "nashville@aaacwildliferemoval.com",
+    "fromName": "Nashville Ad Contact Form",
+    "subject": "New Lead from Nashville Ads Lander",
+    "siteName": "Nashville AAAC Wildlife Removal Ads Lander"
   },
   "https://dallastx.aaacwildliferemoval.com": {
-    "toEmail": "marketing@aaacwildliferemoval.com",
+    "toEmail": "dallas@aaacwildliferemoval.com",
     "fromName": "Dallas Ad Contact Form",
     "subject": "New Lead from Dallas Ads Lander",
-    "siteName": "Dallas TX AAAC Wildlife Removal"
+    "siteName": "Dallas AAAC Wildlife Removal Ads Lander"
   }
 } 
